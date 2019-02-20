@@ -100,15 +100,12 @@ namespace tick_tack_toe
             playerOCount = 0;
             xScore.Content = "0";
             oScore.Content = "0";
-
         }
 
         //Method for when a grid cell is clicked
         public void gridClick(string player, Button gridCell, int gridLoc)
         {
             gridClickCount++; //add one to grid cell count
-
-
 
             //if neither players have clicked on the grid cell and theres no current winner
             if ((!playerOCombinations.Contains(gridLoc) && !playerXCombinations.Contains(gridLoc)) && winner == false)
@@ -117,28 +114,28 @@ namespace tick_tack_toe
                 {
                     gridCell.Content = player; //Put X or O on the grid cell according to the player.
                     //if grid all grids have been clicked its a draw
-                    if (gridClickCount == 9)
+                    if (player == "X")
                     {
-                        playerTurnLable.Content = "It's A Draw.";
+                        playerTurn = "O";
+                        playerTurnLable.Content = "It's O's Turn";
+                        playerXCombinations.Add(gridLoc); // add cell location to players List collection
+                        checkWinner("X");
+                        if (gridClickCount == 9 && winner == false)
+                        {
+                            playerTurnLable.Content = "It's A Draw!";
+                        }
                     }
                     else
                     {
-                        if (player == "X")
+                        playerTurn = "X";
+                        playerTurnLable.Content = "It's X's Turn";
+                        playerOCombinations.Add(gridLoc); // add cell location to players List collection
+                        checkWinner("O");
+                        if (gridClickCount == 9 && winner == false)
                         {
-                            playerTurn = "O";
-                            playerTurnLable.Content = "It's O's Turn";
-                            playerXCombinations.Add(gridLoc); // add cell location to players List collection
-                            checkWinner("X");
-                        }
-                        else
-                        {
-                            playerTurn = "X";
-                            playerTurnLable.Content = "It's X's Turn";
-                            playerOCombinations.Add(gridLoc); // add cell location to players List collection
-                            checkWinner("O");
+                            playerTurnLable.Content = "It's A Draw!";
                         }
                     }
-
                 }
             }
         }
