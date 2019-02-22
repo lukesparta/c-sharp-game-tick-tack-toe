@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tick_tack_toe"
         mc:Ignorable="d"
-        Title="MainWindow" Height="auto" Width="auto" Background="Blue" FontSize="100">
+        Title="MainWindow" Height="550" Width="755" Background="Blue" FontSize="100">
     <Grid>
         <Grid x:Name="gameBoard" HorizontalAlignment="Left" Height="440" Margin="33,35,0,0" VerticalAlignment="Top" Width="490">
             <Border BorderBrush="Black" BorderThickness="2" Grid.Row="0" Grid.Column="0">
@@ -48,7 +48,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
         </Grid>
-        <Label x:Name="playerTurnLable" Content="It's X's Turn" HorizontalAlignment="Left" Margin="543,35,0,0" VerticalAlignment="Top" Width="194" Height="145" FontSize="30"/>
+        <Label x:Name="playerTurnLable" Content="It's X's Turn" HorizontalAlignment="Left" Margin="545,35,0,0" VerticalAlignment="Top" Width="194" Height="145" FontSize="30"/>
         <Button Content="Play Again" HorizontalAlignment="Left" Margin="566,354,0,0" VerticalAlignment="Top" Width="157" FontSize="30" Click="Button_Click"/>
         <Label Content="     X    |    O" HorizontalAlignment="Left" Margin="543,202,0,0" VerticalAlignment="Top" FontSize="30" Width="194"/>
         <Label Content="_________________________" HorizontalAlignment="Left" Margin="545,193,0,0" VerticalAlignment="Top" FontSize="40" Width="194"/>
